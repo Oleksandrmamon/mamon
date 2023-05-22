@@ -1,0 +1,317 @@
+.hero {
+  background-image: url("../images/design/cover.jpg");
+  background-size: cover;
+  // background-repeat: no-repeat;
+
+  background-position: top right;
+
+  @media screen and (max-width: $large) {
+    background-position: top left;
+  }
+
+  // vh - viewport height
+  // vw - viewport width
+  // in percent
+  // min-height: calc(100vh - 60px);
+
+  // & === .hero
+  &__logo {
+    // .hero__logo
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.1px;
+    padding-left: 30px;
+
+    color: $text-color;
+
+    transition: opacity ease 0.25s;
+
+    // & === .hero__logo
+    &:hover {
+      // .hero__logo:hover
+      opacity: 0.5;
+    }
+  }
+
+  &__side-menu {
+    display: none;
+
+    &:checked ~ nav {
+      max-height: 100%;
+    }
+
+    &:checked ~ .hero__hamb .hero__hamb-line {
+      background: transparent;
+    }
+
+    &:checked ~ .hero__hamb .hero__hamb-line::before {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+
+    &:checked ~ .hero__hamb .hero__hamb-line::after {
+      transform: rotate(45deg);
+      top: 0;
+    }
+  }
+
+  &__hamb {
+    cursor: pointer;
+    float: right;
+    padding: 20px;
+
+    @media screen and (min-width: $medium) {
+      display: none;
+    }
+  }
+
+  &__hamb-line {
+    background: $second-text-color;
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+    z-index: 4;
+
+    &::before,
+    &::after {
+      background: $second-text-color;
+      content: "";
+      display: block;
+      height: 100%;
+      position: absolute;
+      transition: all 0.2s ease-out;
+      width: 100%;
+    }
+
+    &::before {
+      top: 5px;
+    }
+
+    &::after {
+      top: -5px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    justify-content: space-between;
+
+    min-height: calc(100vh - 60px);
+
+    & > :not(:first-child) {
+      padding: 0px 30px;
+    }
+  }
+}
+
+.navbar {
+  display: flex;
+  //gap: 120px;
+
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @media screen and (max-width: $medium) {
+    background-color: #fff;
+    box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+    padding-right: 20px;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    top: 0;
+    display: block;
+  }
+}
+
+.nav {
+  margin-left: 120px;
+  max-height: none;
+  transition: max-height 0.5s ease-out;
+  height: 100%;
+  overflow: hidden;
+
+  &__list {
+    @media screen and (max-width: $medium) {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      justify-items: center;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    line-height: 32px;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+
+      @media screen and (max-width: $medium) {
+        margin-right: 0px;
+      }
+    }
+
+    a {
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.2px;
+      color: $second-text-color;
+
+      transition: color ease 0.25s;
+
+      &:hover {
+        color: $text-color;
+      }
+
+      @media screen and (max-width: $medium) {
+        font-weight: 400;
+        line-height: 45px;
+        font-size: 25px;
+      }
+    }
+  }
+
+  @media screen and (max-width: $medium) {
+    max-height: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: white;
+    overflow: hidden;
+    margin: 0;
+    top: 102px;
+  }
+}
+
+.hero-cta {
+  max-width: 510px;
+
+  @media screen and (max-width: $medium) {
+    text-align: center;
+    margin-top: 130px;
+    margin-bottom: 30px;
+    max-width: 100%;
+  }
+
+  &__info {
+    font-weight: 500;
+    @include adaptiv-font(20, 16);
+    line-height: 30px;
+    letter-spacing: 0.2px;
+    color: $second-text-color;
+
+    p + p {
+      margin-top: 10px;
+    }
+
+    margin: 35px 0;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 10px;
+
+    @media screen and (max-width: $medium) {
+      justify-content: center;
+    }
+
+    @media screen and (max-width: $small) {
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+  }
+
+  h1 {
+    font-weight: 800;
+    @include adaptiv-font(58, 35);
+    line-height: 80px;
+    letter-spacing: 0.2px;
+    color: $text-color;
+    text-transform: uppercase;
+
+    @media screen and (max-width: $medium) {
+      line-height: 50px;
+    }
+  }
+}
+
+.hero-blocks {
+  display: flex;
+  gap: 30px;
+
+  position: relative;
+  top: 20px;
+
+  @media screen and (max-width: $large) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.hero-block {
+  background-color: #fff;
+  padding: 35px 40px;
+  width: 100%;
+
+  box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+
+  transition: all ease 0.3s;
+
+  @media screen and (max-width: $large) {
+    max-width: 350px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.1px;
+
+    white-space: nowrap;
+
+    margin: 10px 0;
+
+    color: $text-color;
+
+    @media screen and (max-width: $medium) {
+      white-space: normal;
+    }
+  }
+
+  &__descr {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+
+    color: $second-text-color;
+  }
+
+  svg {
+    fill: $secondary-color;
+  }
+
+  // &:hover * {
+  //     background-color: $secondary-color;
+  //     fill: #fff;
+  //     color: #fff;
+  // }
+
+  &:hover {
+    background-color: $secondary-color;
+
+    svg {
+      fill: #fff;
+    }
+
+    .hero-block__title,
+    .hero-block__descr {
+      color: #fff;
+    }
+  }
+}

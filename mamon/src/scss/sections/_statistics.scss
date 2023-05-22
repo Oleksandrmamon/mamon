@@ -1,0 +1,49 @@
+.statistics {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    
+    @media screen and (max-width: $medium) {
+      padding-top: 30px;
+    }
+  }
+}
+
+.statistics-blocks {
+  display: flex;
+  gap: 30px;
+}
+
+.statistics-block {
+  background-color: #fff;
+  padding: 30px 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  svg {
+    fill: $secondary-color;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 57px;
+    letter-spacing: 0.2px;
+    margin: 10px 0;
+    color: $text-color;
+  }
+
+  &__descr {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+
+    color: $second-text-color;
+  }
+}

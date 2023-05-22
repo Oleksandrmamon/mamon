@@ -1,0 +1,56 @@
+.btn {
+  display: inline-block;
+
+  font-weight: 700; // bold
+  font-size: 14px;
+
+  line-height: 28px; //28px;
+  letter-spacing: 0.2px;
+
+  padding: 10px 28px;
+
+  border: 1px solid $primary-color;
+  border-radius: 5px;
+
+  background-color: $primary-color;
+  color: #fff;
+
+  transition: background-color ease 0.35s, color ease 0.35s;
+
+  &:hover {
+    background-color: transparent;
+    color: $primary-color;
+  }
+
+  // border - square (default) or rounded
+  &--rounded {
+    border-radius: 37px;
+  }
+
+  // color - primary (default) or secondary
+  &--secondary {
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+
+    &:hover {
+      // background-color: transparent;
+      color: $secondary-color;
+    }
+  }
+
+  // fill - full (default) or outline
+  &--outline {
+    background-color: transparent;
+    color: $primary-color;
+
+    &:hover {
+      background-color: $primary-color;
+      color: #fff;
+    }
+  }
+
+  // &--secondary.&--outline {
+  //     background-color: transparent;
+  //     color: $primary-color;
+  // }
+}

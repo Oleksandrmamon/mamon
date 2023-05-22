@@ -1,0 +1,122 @@
+.service {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+
+    @media screen and (max-width: $medium) {
+      gap: 40px;
+    }
+  }
+}
+
+.service-contents {
+  display: flex;
+  gap: 120px;
+
+  @media screen and (max-width: $large) {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+  }
+}
+
+.service-descriptions {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.service-video {
+  max-width: 600px;
+  height: 442px;
+  width: 100%;
+  background-image: url("../images/content/media-bg-cover.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  &__button {
+    position: absolute;
+    left: calc(50% - 97.6px / 2 + 0.3px);
+    top: calc(50% - 98.4px / 2 + 0.2px);
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    padding: 0px;
+    border-radius: 73.6px;
+
+    svg {
+      width: 100%;
+      fill: #fff;
+    }
+  }
+}
+
+.service-description {
+  &__title-container {
+    padding: 20px 0px;
+    max-width: 333px;
+
+    h2 {
+      font-weight: 700;
+      @include adaptiv-font(40, 30);
+      line-height: 57px;
+      letter-spacing: 0.2px;
+      color: $text-color;
+
+      @media screen and (max-width: $medium) {
+        line-height: 40px;
+      }
+    }
+
+    @media screen and (max-width: $large) {
+      text-align: center;
+    }
+  }
+
+  &__info {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: $second-text-color;
+    margin-top: 10px;
+  }
+}
+
+.service-description-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.service-description-block {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: $text-color;
+  }
+
+  &__descr {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    color: $second-text-color;
+  }
+}

@@ -1,0 +1,39 @@
+.advice {
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.advice-blocks {
+  display: flex;
+}
+
+.advice-block {
+  background-color: #fff;
+
+  &__content {
+    padding: 30px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: $text-color;
+    margin-bottom: 15px;
+  }
+
+  &__descr {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: $second-text-color;
+  }
+
+  &__cover {
+    width: 100%;
+  }
+}
